@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Productos = ({productos}) => {
+const Productos = ({productos, agregarProductoAlCarrito}) => {
 
     return ( 
         <div>
@@ -11,7 +11,11 @@ const Productos = ({productos}) => {
                     return(
                         <Producto key={index}>
                             <p>{producto.nombre}</p>
-                            <Boton>Agregar al carrito</Boton>
+                            <Boton 
+                                onClick={() => agregarProductoAlCarrito(producto.id, producto.nombre)}
+                            >
+                                Agregar al carrito
+                            </Boton>
                         </Producto>
                     );
                 })}
